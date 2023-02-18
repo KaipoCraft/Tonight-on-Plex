@@ -4,26 +4,21 @@ from plexapi.media import TranscodeSession
 from plexapi import utils
 
 class Client:
+    # Client class to handle the connection to the Plex API
+    # params: username, password, plexServer
     def __init__(self, username, password, plexServer):
-        # self.host = host
-        # self.port = port
-        # self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # self.sock.connect((self.host, self.port))
         self.username = username
         self.password = password
         self.plexServer = plexServer
 
+    # connects to the Plex API
     def connectAPI(self):
         account = MyPlexAccount(self.username, self.password)
-        plex = account.resource(self.plexServer).connect()  # returns a PlexServer instance
-        return plex
-
-    def send(self, data):
-        self.sock.send(data)
-
-    def receive(self):
-        data = self.sock.recv(1024)
-        return data
-
-    def close(self):
-        self.sock.close()
+        server = account.resource(self.plexServer).connect()  # returns a PlexServer instance
+        return server
+    
+    # get a list of all the media on the server
+    def getMedia(self, _plexServer):
+        media = _plexServer.library.all()
+        for thing in media:
+            print(thing.title)

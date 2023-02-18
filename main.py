@@ -1,22 +1,29 @@
 from client import Client
 
 class Main:
-    # def __init__(self):
-        # self._window = Window()
-        # self._window.show()
+    def __init__(self, username, password, plexServer):
+        self._client = Client(username, password, plexServer)   # instantiate the Client class
+        self.server = self._client.connectAPI()                 # returns a PlexServer instance
 
-    # def run(self):
-    #     self._window.run()
-
-    def setup():
-        _client = Client('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU', 'T9 Plex')
-        server = _client.connectAPI()
+    # sets up the connection to the Plex API
+    def setup(self):
+        server = self._client.connectAPI()
         print(server._session)
+        return server
 
-    def setTimestamp():
-        _client = client.__new__(Client())
-        timestamp = _client.getTimestamp()
+    # sets the timestamp of the media in the local version of Plex
+    def setTimestamp(self):
+        timestamp = self._client.getTimestamp()
 
+    # sets the media in the local version of Plex
+    def setMedia(self):
+        server = self.setup()
+        self._client.getMedia(server)
 
-_main = Main
-_main.setup()
+    # run tests with the poorly documented API
+    def test(self):
+        print(self.server.account())
+
+# Run the main class
+_main = Main('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU', 'T9 Plex')
+_main.test()
