@@ -9,8 +9,7 @@ class Main:
     #     self._window.run()
 
     def setup():
-        _client = Client.__new__(Client())
-        _client.__init__('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU')
+        _client = Client('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU', 'T9 Plex')
         server = _client.connectAPI()
         print(server._session)
 
