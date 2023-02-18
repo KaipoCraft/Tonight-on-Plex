@@ -34,4 +34,7 @@ for thing in media:
 # streamers share rating key UUID assigned to content
 # timestamp object
 
-# print(plex.media.TranscodeSession.key)
+print(plex._session)
+
+# whenever things aren't working, reload the page, open the networks tab in dev tools, and then search what pops up
+# need to get to "client" object and find "timeline" object - that has the best info
