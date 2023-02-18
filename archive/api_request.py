@@ -42,23 +42,11 @@ def devices(self):
 # get time stamp from main user on playlist
 
 
-# potentially a way to match the time watched between users
-def updateProgress(self, time, state='stopped'):
-        """ Set the watched progress for this video.
-
-            Note that setting the time to 0 will not work.
-            Use :func:`~plexapi.mixins.PlayedMixin.markPlayed` or
-            :func:`~plexapi.mixins.PlayedMixin.markUnplayed` to achieve
-            that goal.
-
-            Parameters:
-                time (int): milliseconds watched
-                state (string): state of the video, default 'stopped'
-        """
-        key = f'/:/progress?key={self.ratingKey}&identifier=com.plexapp.plugins.library&time={time}&state={state}'
-        self._server.query(key)
-        self._reload(_overwriteNone=False)
-
+# Client class controls what is being watched
+        # goToMedia(media, **params) - directs the client to a specified media object
+        # pause(mtype='video') - pauses playback of the video
+        # play(mtype='video') - starts playback of the video
+        # seekTo(offset, mtype='video') - sets the offset of the video (in milliseconds)
 
 # use media.Session and media.TranscodeSession
 # streamers share rating key UUID assigned to content

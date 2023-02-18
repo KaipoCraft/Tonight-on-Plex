@@ -1,7 +1,5 @@
 from plexapi.myplex import MyPlexAccount    # import MyPlexAccount to allow us to log in to Plex to gain access to the API
 from plexapi.server import PlexServer       # import PlexServer which will be instantiated when we run the connectAPI() function
-from plexapi.media import TranscodeSession
-from plexapi import utils
 
 class Client:
     # Client class to handle the connection to the Plex API
@@ -22,3 +20,5 @@ class Client:
         media = _plexServer.library.all()
         for thing in media:
             print(thing.title)
+
+# TODO: recieve the timestamp from the main user
