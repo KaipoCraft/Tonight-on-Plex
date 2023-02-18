@@ -1,25 +1,26 @@
 import api_request # <- our file that handles the api request
 import json
 ####################################################################################################
-## This file handles how to read a "channel" json file
+## This file handles how to read a "calendar" of content in a json file
 ####################################################################################################
 
 # Hey, this is just for the hackathon. I'm just going to make this a static file for now.
 file = 'example_channel.json'
 
 
-
-# define the function that reads in a json file and returns a list media items with their times
-def read_json(filename):
-    # open the file
-    with open(filename, 'r') as f:
-        # read the file
-        data = json.load(f)
-        # return the data
+# a class that manages the calendar of media items
+class Schedule:
+    # constructor
+    def __init__(self, file):
+        self.file = file
+        self.list = self.parse_file()
+    
+    #read json file and return a list of media items
+    def parse_file_to_WHAT(self):
+        with open(self.file) as f:
+            data = json.load(f)
         return data
-
-# now make the dictionary containing the channel content.
-channel_content = read_json(file)
-
-print (channel_content)
-
+    
+#make a new instance of the schedule class
+schedule = Schedule(file)
+print(schedule.list)
