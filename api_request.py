@@ -2,7 +2,7 @@
 
 username = 'nesh5910@colorado.edu'
 # This is the Key being used to access the account. You can find it by #TODO
-apikey = 'cxRa4yA7vHp63nU'
+password = 'cxRa4yA7vHp63nU'
 plexServer = 'T9 Plex'
 
 # import the library requests
@@ -11,7 +11,7 @@ from plexapi.server import PlexServer
 from plexapi.media import TranscodeSession
 from plexapi import utils
 
-account = MyPlexAccount(username, apikey)
+account = MyPlexAccount(username, password)
 plex = account.resource(plexServer).connect()  # returns a PlexServer instance
 
 # Example 1: List all unwatched movies.
