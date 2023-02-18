@@ -3,7 +3,7 @@
 # import the library requests
 from plexapi.myplex import MyPlexAccount
 from plexapi.server import PlexServer
-from plexiapi.media import TranscodeSession
+from plexapi.media import TranscodeSession
 account = MyPlexAccount('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU')
 plex = account.resource('T9 Plex').connect()  # returns a PlexServer instance
 
@@ -12,15 +12,9 @@ plex = account.resource('T9 Plex').connect()  # returns a PlexServer instance
 # for video in movies.search(unwatched=True):
 #     print(video.title)
 
-# make a request for the playlist
-# make a request for where the keys are and match that
-# playlist = plex.playlist.items()
-# for thing in playlist:
-#     print(thing.title)
-
-# media = plex.library.all()
-# for thing in media:
-#     print(thing.title)
+media = plex.library.all()
+for thing in media:
+    print(thing.title)
 
 # for playlist in plex.playlists():
 #     print(playlist.title)
@@ -37,4 +31,4 @@ plex = account.resource('T9 Plex').connect()  # returns a PlexServer instance
 # streamers share rating key UUID assigned to content
 # timestamp object
 
-print(plexiapi.media.TranscodeSession.key)
+# print(plex.media.TranscodeSession.key)
