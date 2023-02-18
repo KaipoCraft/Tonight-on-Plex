@@ -1,6 +1,7 @@
 # This document sends a request to the API
 
 username = 'nesh5910@colorado.edu'
+# This is the Key being used to access the account. You can find it by #TODO
 apikey = 'cxRa4yA7vHp63nU'
 plexServer = 'T9 Plex'
 
