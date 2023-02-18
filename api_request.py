@@ -2,13 +2,14 @@
 
 username = 'nesh5910@colorado.edu'
 apikey = 'cxRa4yA7vHp63nU'
+plexServer = 'T9 Plex'
 
 # import the library requests
 from plexapi.myplex import MyPlexAccount
 from plexapi.server import PlexServer
 from plexapi.media import TranscodeSession
 account = MyPlexAccount(username, apikey)
-plex = account.resource('T9 Plex').connect()  # returns a PlexServer instance
+plex = account.resource(plexServer).connect()  # returns a PlexServer instance
 
 # Example 1: List all unwatched movies.
 # movies = plex.library.section('Movies')
