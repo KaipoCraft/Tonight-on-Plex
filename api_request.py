@@ -1,10 +1,13 @@
 # This document sends a request to the API
 
+username = 'nesh5910@colorado.edu'
+apikey = 'cxRa4yA7vHp63nU'
+
 # import the library requests
 from plexapi.myplex import MyPlexAccount
 from plexapi.server import PlexServer
 from plexapi.media import TranscodeSession
-account = MyPlexAccount('nesh5910@colorado.edu', 'cxRa4yA7vHp63nU')
+account = MyPlexAccount(username, apikey)
 plex = account.resource('T9 Plex').connect()  # returns a PlexServer instance
 
 # Example 1: List all unwatched movies.
