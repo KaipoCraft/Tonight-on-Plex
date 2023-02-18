@@ -27,6 +27,11 @@ for thing in media:
 # get playlist
 
 # get users on server
+# maybe ??? idk
+def devices(self):
+        """ Returns a list of all :class:`~plexapi.myplex.MyPlexDevice` objects connected to the server. """
+        data = self.query(MyPlexDevice.key)
+        return [MyPlexDevice(self, elem) for elem in data]
 
 # get time stamp from main user on playlist
 
